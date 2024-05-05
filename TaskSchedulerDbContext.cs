@@ -25,6 +25,11 @@ namespace TaskScheduler.Worker
     }
     public class TaskSchedulerDbContext : DbContext
     {
+        public TaskSchedulerDbContext(DbContextOptions<TaskSchedulerDbContext> options)
+        : base(options)
+        {
+        }
+
         public DbSet<Task_Sch> Tasks_Schedules { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

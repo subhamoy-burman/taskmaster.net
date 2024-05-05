@@ -35,7 +35,7 @@ namespace TaskScheduler.Worker
                         // Update task status
                         task.PickedAt = DateTime.UtcNow;
                         task.Status = "In Progress";
-                        dbContext.Tasks.Update(task);
+                        dbContext.Tasks_Schedules.Update(task);
 
                         // Push task to Kafka queue
                         // ...
